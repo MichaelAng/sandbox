@@ -1,0 +1,25 @@
+{
+  "name": "sandbox",
+  "version": "1.0.0",
+  "description": "A project that I can play around with",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp --"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelAng/sandbox.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MichaelAng/sandbox/issues"
+  },
+  "homepage": "https://github.com/MichaelAng/sandbox#readme",
+  "devDependencies": {
+    "gulp": "git+https://git@github.com/gulpjs/gulp.git#4.0"
+  },
+  "dependencies": {
+  }
+}
