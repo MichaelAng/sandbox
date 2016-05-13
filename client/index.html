@@ -2,18 +2,18 @@
 <html lang="en" ng-app="sandbox">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
-    <link rel="stylesheet" href="/assets/styles/sandbox.style.css">
 </head>
 <body class="docs-body layout-row" layout="row" ng-cloak flex>
 
     <md-sidenav ui-view='sidenav' class="md-sidenav-left md-whiteframe-z2"
         md-component-id="left"
-        md-is-locked-open="$mdMedia('gt-md')">
+        md-is-locked-open="$mdMedia('gt-sm')">
     </md-sidenav>
 
-    <md-content ui-view flex layout-padding>
-    </md-content>
+    <div ui-view class="layout-column flex" layout="column" tabindex="-1" role="main" flex>
+    </div>
 
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-animate/angular-animate.js"></script>
@@ -28,3 +28,5 @@
     <script type="text/javascript" src="/components/content/content.controller.js"></script>
 </body>
 </html>
+
+
