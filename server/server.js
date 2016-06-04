@@ -7,6 +7,7 @@
     var config = require('./config/config');
     var methodOverride = require('method-override');
     var path = require('path');
+    require('./routes')(app);
 
     app.use(express.static(config.root));
     app.use(bodyParser.urlencoded({'extended':'true'}));
