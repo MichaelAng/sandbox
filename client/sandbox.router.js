@@ -17,11 +17,11 @@
                 abstract: true,
                 views: {
                     'sidenav': {
-                        templateUrl: '/components/sidenav/sidenav.tmpl.html',
+                        templateUrl: 'components/sidenav/sidenav.tmpl.html',
                         controller: 'SideNavController'
                     },
                     '' : {
-                        templateUrl: '/components/content/content.tmpl.html',
+                        templateUrl: 'components/content/content.tmpl.html',
                         controller: 'ContentController'
                     }
                 }

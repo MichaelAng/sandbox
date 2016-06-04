@@ -3,6 +3,7 @@
 
     angular
         .module('sidenav.controller', [])
-        .controller('SideNavController', function ($scope, $timeout, $mdSidenav, $log) {
+        .controller('SideNavController', function () {
         });
 })();
+
