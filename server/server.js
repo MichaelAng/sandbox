@@ -14,8 +14,8 @@
     app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
     app.use(methodOverride());
 
-    app.set('appPath', path.join(config.root, 'client'));
-    app.use(express.static(path.join(config.root, 'client')));
+    app.set('appPath', path.join(config.root, 'public'));
+    app.use(express.static(path.join(config.root, 'public')));
 
     // Start server
     app.listen(config.port, config.ip, function () {
