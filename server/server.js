@@ -8,6 +8,15 @@
     var methodOverride = require('method-override');
     var path = require('path');
     require('./routes')(app);
+    var mongoose = require('mongoose');
+
+    // Connect to database
+    mongoose.Promise = require('bluebird');
+    mongoose.connect('mongodb://localhost:27017/mongoose_test');
+    mongoose.connection.on('error', function(err) {
+        console.error('MongoDB connection error: ' + err);
+        process.exit(-1);
+    });
 
     app.use(express.static(config.root));
     app.use(bodyParser.urlencoded({'extended':'true'}));
