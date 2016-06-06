@@ -11,8 +11,15 @@ This project is for me to prototype new things.
 npm install
 bower install
     ```
+
+1. Start the database
+
+    ```
+mongod
+    ```
+
 1. Start the server
 
     ```
-node server/server.js
+npm start
     ```
