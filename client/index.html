@@ -2,7 +2,6 @@
 <html lang="en" ng-app="sandbox">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- bower:css -->
     <!-- bower installed css files will go here... -->
     <!-- endinject -->
@@ -13,13 +12,8 @@
 
 </head>
 <body class="docs-body layout-row" layout="row" ng-cloak flex>
-    <md-sidenav ui-view='sidenav' class="md-sidenav-left md-whiteframe-z2"
-        md-component-id="left"
-        md-is-locked-open="$mdMedia('gt-sm')">
-    </md-sidenav>
-
-    <div ui-view class="layout-column flex" layout="column" tabindex="-1" role="main" flex>
-    </div>
+    <div ui-view='sidenav'></div>
+    <div ui-view></div>
 
     <!-- bower:js -->
     <!-- bower installed scripts will go here... -->
