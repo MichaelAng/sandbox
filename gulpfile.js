@@ -58,7 +58,17 @@
 
     gulp.task('script:index', function () {
         return gulp.src('.tmp/index.html')
-            .pipe(inject(gulp.src(bowerFiles(), {read: false}), {name: 'bower'}))
+            .pipe(inject(gulp.src(bowerFiles({
+                overrides: {
+                    bootstrap: {
+                        main: [
+                            './dist/js/bootstrap.js',
+                            './dist/css/*.min.*',
+                            './dist/fonts/*.*'
+                        ]
+                    }
+                }
+            }), {read: false}), {name: 'bower'}))
             .pipe(inject(gulp.src(['.tmp/*', '.tmp/*/**'], {read: false}), {relative: true}))
             .pipe(gulp.dest('public'));
     });
@@ -78,7 +88,7 @@
         'clean:tmp'
     ));
 
-    gulp.task('default', gulp.series(['script:tmp', 'script:index', 'stage:public', 'clean:tmp']))
+    gulp.task('default', gulp.series(['clean:public', 'script:tmp', 'script:index', 'stage:public', 'clean:tmp']))
 
     gulp.task('watch', function () {
         gulp.watch([index, scripts, styles, views], gulp.parallel(['default']));
