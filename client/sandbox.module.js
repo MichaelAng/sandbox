@@ -1,8 +1,8 @@
 (function () {
     'use strict';
     angular.module('sandbox', [
-        'content.controller',
-        'sandbox.router',
-        'header.controller'
+        'content.module',
+        'header.module',
+        'sandbox.router'
     ]);
 })();

@@ -6,12 +6,18 @@
     const inject = require('gulp-inject');
     const templateCache = require('gulp-angular-templatecache');
     const del = require('del');
+    const plumber = require('gulp-plumber')
     const vinylPaths = require('vinyl-paths');
-
 
     // Files
     const index = [
         'client/index.html'
+    ];
+
+    const moduleOrder = [
+        '.tmp/sandbox.module.js',
+        '.tmp/**/*.module.js',
+        '.tmp/**/*.js'
     ];
 
     const scripts = [
@@ -39,6 +45,7 @@
 
     gulp.task('clean:public', function () {
         return gulp.src('public/')
+
             .pipe(vinylPaths(del));
     });
 
@@ -53,8 +60,12 @@
 
     gulp.task('stage:tmp', function () {
         return gulp.src(['client/*', 'client/*/**', '!client/**/*.spec.js'])
-            .pipe(gulp.dest('./.tmp'));
+            .pipe(gulp.dest('.tmp/'));
     });
+
+    var vendorStream = gulp.src(['.tmp/*'], {read: false});
+    var appStream = gulp.src(['.tmp/*/**.module.js'], {read: false});
+    var appStream2 = gulp.src(['.tmp/*/**.js'], {read: false});
 
     gulp.task('script:index', function () {
         return gulp.src('.tmp/index.html')
@@ -69,8 +80,8 @@
                     }
                 }
             }), {read: false}), {name: 'bower'}))
-            .pipe(inject(gulp.src(['.tmp/*', '.tmp/*/**'], {read: false}), {relative: true}))
-            .pipe(gulp.dest('public'));
+            .pipe(inject(gulp.src(moduleOrder, {read: false}), {relative: true}))
+            .pipe(gulp.dest('public/'));
     });
 
     gulp.task('stage:public', function () {
@@ -88,7 +99,7 @@
         'clean:tmp'
     ));
 
-    gulp.task('default', gulp.series(['clean:public', 'script:tmp', 'script:index', 'stage:public', 'clean:tmp']))
+    gulp.task('default', gulp.series(['script:tmp', 'script:index', 'stage:public', 'clean:tmp']))
 
     gulp.task('watch', function () {
         gulp.watch([index, scripts, styles, views], gulp.parallel(['default']));

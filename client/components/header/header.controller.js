@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('header.controller', [])
+        .module('header.module')
         .controller('HeaderController', function () {
         });
 })();

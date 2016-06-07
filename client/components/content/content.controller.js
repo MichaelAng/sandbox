@@ -2,7 +2,8 @@
     'use strict';
 
     angular
-        .module('content.controller', [])
+        .module('content.module')
         .controller('ContentController', function () {
+            console.log('hello')
         });
 })();
