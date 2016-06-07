@@ -7,12 +7,12 @@
     var config = require('./config/config');
     var methodOverride = require('method-override');
     var path = require('path');
-    require('./routes')(app);
+
     var mongoose = require('mongoose');
 
     // Connect to database
     mongoose.Promise = require('bluebird');
-    mongoose.connect('mongodb://localhost:27017/mongoose_test');
+    mongoose.connect('mongodb://localhost:27017/sandbox');
     mongoose.connection.on('error', function(err) {
         console.error('MongoDB connection error: ' + err);
         process.exit(-1);
@@ -23,6 +23,7 @@
     app.use(bodyParser.json());
     app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
     app.use(methodOverride());
+    require('./routes')(app);
 
     app.set('appPath', path.join(config.root, 'public'));
     app.use(express.static(path.join(config.root, 'public')));

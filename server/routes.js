@@ -5,5 +5,5 @@ var path = require('path');
 module.exports = function(app) {
 
   // Insert routes below
-  app.use('/api/task', require('./api/task'));
+  app.use('/api/tasks', require('./api/task'));
 };
