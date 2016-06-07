@@ -1,17 +1,37 @@
-<button ng-click="ContentController.createTask()">create a task</button>
-
 <div class="container">
+    <form ng-submit="ContentController.createTask()">
+        <div class="form-group">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="New Task"
+                    ng-model="ContentController.newTask">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">Submit</button>
+                </span>
+            </div>
+        </div>
+    </form>
+
     <div class="row">
-        <div class="col-lg-12"
+        <div class="col-md-12"
             ng-repeat="task in ContentController.tasks">
             <div class="input-group">
                 <span class="input-group-addon">
-                    <input type="checkbox">
+                    <input type="checkbox"
+                        ng-model="task.isDone"
+                        ng-model-options="{ debounce: 1000 }"
+                        ng-change="ContentController.updateTask(task)" \>
                 </span>
-                <input type="text" class="form-control" ng-model="task.name">
+                <input type="text" class="form-control"
+                    ng-model="task.name"
+                    ng-model-options="{ debounce: 1000 }"
+                    ng-change="ContentController.updateTask(task)" \>
+                <span class="input-group-btn">
+                    <button class="btn btn-danger" type="button"
+                        ng-click="ContentController.deleteTask(task._id)">
+                        Del
+                    </button>
+                </span>
             </div>
         </div>
     </div>
 </div>
-
-<pre>{{ContentController.tasks | json}}</pre>

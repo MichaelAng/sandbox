@@ -6,8 +6,9 @@ exports.createTask = (req, res, next) => {
         .catch( err => res.status(404).json(err) );
 };
 
-exports.deleteTask = (req, res) => {
-    Task.create(req.body)
+exports.deleteTask = (req, res, next) => {
+    let id = req.params.id;
+    Task.findByIdAndRemove(id)
         .then( task => res.status(201).json(task) )
         .catch( err => res.status(404).json(err) );
 };
