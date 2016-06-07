@@ -3,7 +3,13 @@
 
     angular
         .module('content.module')
-        .controller('ContentController', function () {
-            console.log('hello')
-        });
+        .controller('ContentController', ContentController);
+
+        ContentController.$inject = ['TaskApi'];
+        function ContentController(TaskApi) {
+            TaskApi.createTask(1)
+                .then(function () {
+                    console.log(x);
+                })
+        }
 })();
