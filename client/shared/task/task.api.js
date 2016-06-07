@@ -23,7 +23,7 @@
 
         function deleteTask (taskId) {
             return $http.delete('/api/tasks/'+ taskId)
-                .then( x =>  Task.setTasks(x.data) )
+                .then( x =>  Task.setTask(x.data) )
                 .catch( x => console.log(x) );
         }
 
