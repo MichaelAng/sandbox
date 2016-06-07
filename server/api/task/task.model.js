@@ -7,6 +7,13 @@ const TaskSchema = new Schema({
     createdDate: {
         default: Date.now,
         type: Date
+    },
+    name: {
+        type: String
+    },
+    isDone: {
+        default: false,
+        type: Boolean
     }
 });
 
