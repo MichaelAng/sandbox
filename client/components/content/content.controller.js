@@ -8,13 +8,17 @@
         ContentController.$inject = ['TaskApi', 'Task'];
         function ContentController(TaskApi, Task) {
             var vm = this;
-            vm.task = Task.getTask();
-            vm.updateTask = updateTask;
+            vm.tasks = Task.getTasks();
+            vm.createTask = createTask;
 
-            TaskApi.createTask();
+            activate();
 
-            function updateTask () {
-                Task.setTask({win:'I wanna win'})
+            function activate() {
+                TaskApi.getTasks();
+            }
+
+            function createTask() {
+                return TaskApi.createTask({name: 'get it done'});
             }
 
         }
