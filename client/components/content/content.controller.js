@@ -5,11 +5,17 @@
         .module('content.module')
         .controller('ContentController', ContentController);
 
-        ContentController.$inject = ['TaskApi'];
-        function ContentController(TaskApi) {
-            TaskApi.createTask(1)
-                .then(function () {
-                    console.log(x);
-                })
+        ContentController.$inject = ['TaskApi', 'Task'];
+        function ContentController(TaskApi, Task) {
+            var vm = this;
+            vm.task = Task.getTask();
+            vm.updateTask = updateTask;
+
+            TaskApi.createTask();
+
+            function updateTask () {
+                Task.setTask({win:'I wanna win'})
+            }
+
         }
 })();
