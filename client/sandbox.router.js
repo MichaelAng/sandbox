@@ -18,11 +18,13 @@
                 views: {
                     'header': {
                         templateUrl: 'components/header/header.tmpl.html',
-                        controller: 'HeaderController'
+                        controller: 'HeaderController',
+                        controllerAs: 'HeaderController'
                     },
                     '' : {
                         templateUrl: 'components/content/content.tmpl.html',
-                        controller: 'ContentController'
+                        controller: 'ContentController',
+                        controllerAs: 'ContentController'
                     }
                 }
             })
