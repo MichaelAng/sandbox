@@ -21,11 +21,11 @@
             setTasks: setTasks
         };
 
-        function getTask (task) {
+        function getTask () {
             return currentTask;
         }
 
-        function getTasks (taskList) {
+        function getTasks () {
             return tasks;
         }
 
