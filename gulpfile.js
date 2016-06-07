@@ -21,7 +21,7 @@
     ];
 
     const scripts = [
-        'client/**/sandbox.module.js',
+        'client/sandbox.module.js',
         'client/**/*.module.js',
         'client/**/*.js',
 
