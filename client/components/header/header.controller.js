@@ -2,8 +2,8 @@
     'use strict';
 
     angular
-        .module('sidenav.controller', [])
-        .controller('SideNavController', function () {
+        .module('header.controller', [])
+        .controller('HeaderController', function () {
         });
 })();
 

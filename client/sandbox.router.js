@@ -16,9 +16,9 @@
             .state('home', {
                 abstract: true,
                 views: {
-                    'sidenav': {
-                        templateUrl: 'components/sidenav/sidenav.tmpl.html',
-                        controller: 'SideNavController'
+                    'header': {
+                        templateUrl: 'components/header/header.tmpl.html',
+                        controller: 'HeaderController'
                     },
                     '' : {
                         templateUrl: 'components/content/content.tmpl.html',

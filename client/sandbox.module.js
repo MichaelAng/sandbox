@@ -3,6 +3,6 @@
     angular.module('sandbox', [
         'content.controller',
         'sandbox.router',
-        'sidenav.controller'
+        'header.controller'
     ]);
 })();
