@@ -4,15 +4,15 @@
     angular.module('task.module')
         .factory('Task', Task);
 
-    Task.$inject = [];
-    function Task() {
-        var taskList = [];
+    Task.$inject = ['$filter'];
+    function Task($filter) {
         var currentTask = {};
+        var filterOptions = {};
+        var originalTaskList = [];
+        var taskList = [];
 
         return {
-            tasks: taskList,
-            currentTask: currentTask,
-
+            // Getter/Setters
             getTask: getTask,
             getTaskList: getTaskList,
             destroyTask: destroyTask,
@@ -20,11 +20,11 @@
             setTask: setTask,
             setTaskList: setTaskList,
 
+            // Manipulators
             addToTaskList: addToTaskList,
+            filterTaskList: filterTaskList,
             removeFromTaskList: removeFromTaskList,
             updateTaskList: updateTaskList
-            // Add filter tasklist
-            // Why do i have a current task?
         };
 
         function getTask () {
@@ -49,18 +49,27 @@
 
         function setTaskList (tasks) {
             angular.copy(tasks, taskList);
+            angular.copy(tasks, originalTaskList);
         }
 
         function addToTaskList (task) {
             taskList.push(task);
+            originalTaskList.push(task);
+        }
+
+        function filterTaskList (expression) {
+            var filteredTaskList = $filter('filter')(originalTaskList, expression, 'strict');
+            angular.copy(filteredTaskList, taskList);
         }
 
         function removeFromTaskList (task) {
             taskList.splice(taskList.map(x => x._id).indexOf(task._id), 1);
+            originalTaskList.splice(originalTaskList.map(x => x._id).indexOf(task._id), 1);
         }
 
         function updateTaskList (task) {
             taskList.splice(taskList.map(x => x._id).indexOf(task._id), 1, task);
+            originalTaskList.splice(originalTaskList.map(x => x._id).indexOf(task._id), 1, task);
         }
     };
 })();
