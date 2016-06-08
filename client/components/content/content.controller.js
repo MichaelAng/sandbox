@@ -17,26 +17,22 @@
 
             activate();
 
-            function activate() {
+            function activate () {
                 TaskApi.getTaskList();
             }
 
-            function createTask() {
+            function createTask () {
                 let payload = { name: vm.newTask };
 
                 return TaskApi.createTask(payload)
-                    .then( () => {
-                        vm.newTask = '';
-                        return TaskApi.getTaskList()
-                    });
+                    .then( () => { return vm.newTask = ''; });
             }
 
-            function deleteTask(taskId) {
-                return TaskApi.deleteTask(taskId)
-                  .then( () => { return TaskApi.getTaskList() });
+            function deleteTask (taskId) {
+                return TaskApi.deleteTask(taskId);
             }
 
-            function updateTask(task) {
+            function updateTask (task) {
                 let payload = {
                     name: task.name,
                     isDone: task.isDone

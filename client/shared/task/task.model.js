@@ -18,11 +18,12 @@
             destroyTask: destroyTask,
             destroyTaskList: destroyTaskList,
             setTask: setTask,
-            setTaskList: setTaskList
+            setTaskList: setTaskList,
+
+            addToTaskList: addToTaskList,
+            removeFromTaskList: removeFromTaskList,
+            updateTaskList: updateTaskList
             // Add filter tasklist
-            // Add update task
-            // remove task
-            // update task
             // Why do i have a current task?
         };
 
@@ -50,6 +51,16 @@
             angular.copy(tasks, taskList);
         }
 
-        add
+        function addToTaskList (task) {
+            taskList.push(task);
+        }
+
+        function removeFromTaskList (task) {
+            taskList.splice(taskList.map(x => x._id).indexOf(task._id), 1);
+        }
+
+        function updateTaskList (task) {
+            taskList.splice(taskList.map(x => x._id).indexOf(task._id), 1, task);
+        }
     };
 })();
