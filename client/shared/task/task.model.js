@@ -6,43 +6,50 @@
 
     Task.$inject = [];
     function Task() {
-        var tasks = [];
+        var taskList = [];
         var currentTask = {};
 
         return {
-            tasks: tasks,
+            tasks: taskList,
             currentTask: currentTask,
 
             getTask: getTask,
-            getTasks: getTasks,
+            getTaskList: getTaskList,
             destroyTask: destroyTask,
-            destroyTasks: destroyTasks,
+            destroyTaskList: destroyTaskList,
             setTask: setTask,
-            setTasks: setTasks
+            setTaskList: setTaskList
+            // Add filter tasklist
+            // Add update task
+            // remove task
+            // update task
+            // Why do i have a current task?
         };
 
         function getTask () {
             return currentTask;
         }
 
-        function getTasks () {
-            return tasks;
+        function getTaskList () {
+            return taskList;
         }
 
         function destroyTask () {
             setTask({});
         }
 
-        function destroyTasks () {
-            setTasks({});
+        function destroyTaskList () {
+            setTaskList({});
         }
 
         function setTask (task) {
             angular.copy(task, currentTask);
         }
 
-        function setTasks (taskList) {
-            angular.copy(taskList, tasks);
+        function setTaskList (tasks) {
+            angular.copy(tasks, taskList);
         }
+
+        add
     };
 })();

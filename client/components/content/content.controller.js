@@ -9,7 +9,7 @@
         function ContentController(TaskApi, Task) {
             var vm = this;
             vm.newTask = '';
-            vm.tasks = Task.getTasks();
+            vm.tasks = Task.getTaskList();
 
             vm.createTask = createTask;
             vm.deleteTask = deleteTask;
@@ -18,7 +18,7 @@
             activate();
 
             function activate() {
-                TaskApi.getTasks();
+                TaskApi.getTaskList();
             }
 
             function createTask() {
@@ -27,13 +27,13 @@
                 return TaskApi.createTask(payload)
                     .then( () => {
                         vm.newTask = '';
-                        return TaskApi.getTasks()
+                        return TaskApi.getTaskList()
                     });
             }
 
             function deleteTask(taskId) {
                 return TaskApi.deleteTask(taskId)
-                  .then( () => { return TaskApi.getTasks() });
+                  .then( () => { return TaskApi.getTaskList() });
             }
 
             function updateTask(task) {
