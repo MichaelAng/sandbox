@@ -29,7 +29,8 @@ exports.getTasks = (req, res, next) => {
 exports.updateTask = (req, res, next) => {
     let id = req.params.id;
     let body = req.body;
-    Task.findByIdAndUpdate(id, body)
+    let options = {new: true};
+    Task.findByIdAndUpdate(id, body, options)
         .then( task => res.status(200).json(task) )
         .catch( err => res.status(404).json(err) );
 };
