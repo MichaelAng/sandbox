@@ -25,7 +25,7 @@
                         controllerAs: 'TodoHeaderController'
                     },
                     '@' : {
-                        templateUrl: 'components/content/content.tmpl.html',
+                        templateUrl: 'components/todo/todo.tmpl.html',
                         controller: 'ContentController',
                         controllerAs: 'ContentController'
                     }
