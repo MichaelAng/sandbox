@@ -14,22 +14,22 @@
 
         $stateProvider
             .state('home', {
-                abstract: true,
+                abstract: true
+            })
+            .state('home.todo', {
+                url: '/',
                 views: {
-                    'header': {
-                        templateUrl: 'components/header/header.tmpl.html',
+                    'header@': {
+                        templateUrl: 'components/todo-header/todo-header.tmpl.html',
                         controller: 'HeaderController',
                         controllerAs: 'HeaderController'
                     },
-                    '' : {
+                    '@' : {
                         templateUrl: 'components/content/content.tmpl.html',
                         controller: 'ContentController',
                         controllerAs: 'ContentController'
                     }
                 }
-            })
-            .state('home.welcome', {
-                url: '/'
             });
     }
 
