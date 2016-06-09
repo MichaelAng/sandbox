@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('header.module', [
+    angular.module('todoHeader.module', [
         'task.module'
     ]);
 })();

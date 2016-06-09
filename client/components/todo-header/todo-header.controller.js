@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('header.module')
+        .module('todoHeader.module')
         .controller('TodoHeaderController', TodoHeaderController);
 
     TodoHeaderController.$inject = ['Task'];

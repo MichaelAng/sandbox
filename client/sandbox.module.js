@@ -1,9 +1,8 @@
 (function () {
     'use strict';
     angular.module('sandbox', [
+        'sandbox.router',
         'todo.module',
-        'header.module',
-        'sandbox.router'
+        'todoHeader.module'
     ]);
 })();
-g
