@@ -21,8 +21,8 @@
                 views: {
                     'header@': {
                         templateUrl: 'components/todo-header/todo-header.tmpl.html',
-                        controller: 'HeaderController',
-                        controllerAs: 'HeaderController'
+                        controller: 'TodoHeaderController',
+                        controllerAs: 'TodoHeaderController'
                     },
                     '@' : {
                         templateUrl: 'components/content/content.tmpl.html',

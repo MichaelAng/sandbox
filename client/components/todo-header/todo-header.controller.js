@@ -3,10 +3,10 @@
 
     angular
         .module('header.module')
-        .controller('HeaderController', HeaderController);
+        .controller('TodoHeaderController', TodoHeaderController);
 
-    HeaderController.$inject = ['Task'];
-    function HeaderController (Task) {
+    TodoHeaderController.$inject = ['Task'];
+    function TodoHeaderController (Task) {
         var vm = this;
         vm.search = { name: '' };
 
