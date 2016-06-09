@@ -26,8 +26,8 @@
                     },
                     '@' : {
                         templateUrl: 'components/todo/todo.tmpl.html',
-                        controller: 'ContentController',
-                        controllerAs: 'ContentController'
+                        controller: 'TodoController',
+                        controllerAs: 'TodoController'
                     }
                 }
             });

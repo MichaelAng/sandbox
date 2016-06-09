@@ -3,10 +3,10 @@
 
     angular
         .module('content.module')
-        .controller('ContentController', ContentController);
+        .controller('TodoController', TodoController);
 
-        ContentController.$inject = ['TaskApi', 'Task'];
-        function ContentController(TaskApi, Task) {
+        TodoController.$inject = ['TaskApi', 'Task'];
+        function TodoController(TaskApi, Task) {
             var vm = this;
             vm.newTask = '';
             vm.tasks = Task.getTaskList();

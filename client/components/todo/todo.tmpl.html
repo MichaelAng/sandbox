@@ -1,9 +1,9 @@
 <div class="container">
-    <form ng-submit="ContentController.createTask()">
+    <form ng-submit="TodoController.createTask()">
         <div class="form-group">
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="New Task"
-                    ng-model="ContentController.newTask">
+                    ng-model="TodoController.newTask">
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="submit">Submit</button>
                 </span>
@@ -13,21 +13,21 @@
 
     <div class="row">
         <div class="col-md-12"
-            ng-repeat="task in ContentController.tasks">
+            ng-repeat="task in TodoController.tasks">
             <div class="input-group">
                 <span class="input-group-addon">
                     <input type="checkbox"
                         ng-model="task.isDone"
                         ng-model-options="{ debounce: 1000 }"
-                        ng-change="ContentController.updateTask(task)" \>
+                        ng-change="TodoController.updateTask(task)" \>
                 </span>
                 <input type="text" class="form-control"
                     ng-model="task.name"
                     ng-model-options="{ debounce: 1000 }"
-                    ng-change="ContentController.updateTask(task)" \>
+                    ng-change="TodoController.updateTask(task)" \>
                 <span class="input-group-btn">
                     <button class="btn btn-danger" type="button"
-                        ng-click="ContentController.deleteTask(task._id)">
+                        ng-click="TodoController.deleteTask(task._id)">
                         Del
                     </button>
                 </span>
