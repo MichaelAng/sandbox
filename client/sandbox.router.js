@@ -14,7 +14,14 @@
 
         $stateProvider
             .state('home', {
-                abstract: true
+                abstract: true,
+                views: {
+                    'header': {
+                        templateUrl: 'components/header/header.tmpl.html',
+                        controller: 'HeaderController',
+                        controllerAs: 'HeaderController'
+                    }
+                }
             })
             .state('home.todo', {
                 url: '/',
@@ -28,6 +35,16 @@
                         templateUrl: 'components/todo/todo.tmpl.html',
                         controller: 'TodoController',
                         controllerAs: 'TodoController'
+                    }
+                }
+            })
+            .state('home.about', {
+                url: '/about',
+                views: {
+                    '@' : {
+                        templateUrl: 'components/about/about.tmpl.html',
+                        controller: 'AboutController',
+                        controllerAs: 'AboutController'
                     }
                 }
             });
