@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('content.module')
+        .module('todo.module')
         .controller('TodoController', TodoController);
 
         TodoController.$inject = ['TaskApi', 'Task'];
