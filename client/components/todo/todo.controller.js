@@ -35,6 +35,7 @@
             function updateTask (task) {
                 let payload = {
                     name: task.name,
+                    detail: task.detail,
                     isDone: task.isDone
                 };
 

@@ -11,6 +11,9 @@ const TaskSchema = new Schema({
     name: {
         type: String
     },
+    detail: {
+        type: String
+    },
     isDone: {
         default: false,
         type: Boolean
