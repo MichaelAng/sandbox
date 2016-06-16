@@ -40,7 +40,7 @@
         }
 
         function destroyTaskList () {
-            setTaskList([]g);
+            setTaskList([]);
         }
 
         function setTask (task) {
