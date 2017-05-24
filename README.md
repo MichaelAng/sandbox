@@ -1,6 +1,9 @@
 # Sandbox
 
+[Example](./example.md)
 This project is for me to prototype new things.
+
+
 
 # Getting Started
 
