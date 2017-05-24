@@ -1,6 +1,6 @@
 # Sandbox
 
-[Example](./example.md)
+[Example](./example)
 This project is for me to prototype new things.
 
 
